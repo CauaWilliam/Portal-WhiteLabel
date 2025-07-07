@@ -6,4 +6,4 @@ async function main() {
   console.log('Hash gerado:', hash);
 }
 
-main();
+
