@@ -1,0 +1,9 @@
+POST /users/register
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "nome": "teste",
+    "endereco": "",
+    "senha": ""
+}
