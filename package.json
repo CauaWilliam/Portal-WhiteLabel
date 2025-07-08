@@ -2,8 +2,10 @@
   "name": "portal_whitelabel",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "tsx watch ./src/server.ts"
+    "dev": "tsx watch ./src/server.ts",
+    "migrate": "npx drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/pg": "^8.15.4",
-    "drizzle-kit": "^0.18.1",
+    "drizzle-kit": "^0.31.4",
     "typescript": "^5.8.3"
   }
 }

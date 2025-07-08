@@ -16,18 +16,3 @@ const db = drizzle(pool);
 
 export default db;
 
-
-// Testando a conexão com o banco de dados
-async function testarConexao() {
-  const client = await pool.connect();
-  try {
-    await client.query('SELECT 1');
-    console.log('Conexão bem-sucedida!');
-  } catch (error) {
-    console.error('Erro ao conectar no banco:', error);
-  } finally {
-    client.release();
-  }
-}
-
-testarConexao();

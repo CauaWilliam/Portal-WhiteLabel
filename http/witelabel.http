@@ -1,9 +1,9 @@
-POST /users/register
+POST /whitelabel
 Host: localhost:3000
 Content-Type: application/json
 
 {
     "nome": "teste",
-    "endereco": "",
-    "senha": ""
+    "endereco": "teste",
+    "senha": "teste"
 }
