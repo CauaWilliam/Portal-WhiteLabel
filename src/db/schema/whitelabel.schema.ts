@@ -10,3 +10,4 @@ export const whitelabel_schema = pgTable('whitelabel', {
   created_at: timestamp('created_at').notNull().defaultNow(),
   
 });
+

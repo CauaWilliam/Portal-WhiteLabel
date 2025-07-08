@@ -1,5 +1,3 @@
-
-
 export class WhitelabelEntity { 
     id?: number;
     nome: string;

@@ -1,7 +1,7 @@
 import {   IsNotEmpty, IsString, MaxLength } from "class-validator";
 
 
-export class UserDto {
+export class WhiteLabelDto {
     @IsString()
     @IsNotEmpty()
     nome: string;
@@ -15,7 +15,7 @@ export class UserDto {
     @MaxLength(10)
     senha: string;
 
-    static create (data: Partial<UserDto>) {
-        return Object.assign(new UserDto(), data);
+    static create (data: Partial<WhiteLabelDto>) {
+        return Object.assign(new WhiteLabelDto(), data);
     }
 }

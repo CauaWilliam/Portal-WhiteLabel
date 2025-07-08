@@ -1,5 +1,5 @@
 import { FastifyRequest, FastifyReply } from "fastify"; 
-import { UserDto } from "./dto/users.dto";
+import { UserDto } from "./dto/whitelabel.dto";
 import { validateOrReject } from "class-validator";
 import { WhitelabelCreateUsecase } from "../../usecase/whitelabel.create.usecase";
 import { WhitelabelRepository } from "../../repository/whitelabel.repository";
