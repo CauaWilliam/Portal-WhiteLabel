@@ -1,4 +1,4 @@
-import { UserDto } from "../dto/whitelabel.dto";
+import { WhiteLabelDto } from "../controllers/whitelabel/dto/whitelabel.dto";
 import { WhitelabelEntity } from "../entity/witelabel.entity";
 import { WhitelabelRepository } from "../repository/whitelabel.repository";
 import { gerarHash } from "../script/hash_generator";
@@ -7,7 +7,7 @@ import { gerarHash } from "../script/hash_generator";
 export class WhitelabelCreateUsecase {
     constructor(private readonly whitelabelRepository: WhitelabelRepository) {}
 
-    async execute(data: UserDto) {
+    async execute(data: WhiteLabelDto) {
         const hash = await gerarHash(data.senha);
 
         const payload = WhitelabelEntity.create({

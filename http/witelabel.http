@@ -1,9 +1,0 @@
-POST /whitelabel
-Host: localhost:3000
-Content-Type: application/json
-
-{
-    "nome": "teste",
-    "endereco": "teste",
-    "senha": "teste"
-}
