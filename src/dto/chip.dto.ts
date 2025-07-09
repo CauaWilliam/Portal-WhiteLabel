@@ -4,5 +4,10 @@ import { IsNotEmpty, IsString } from "class-validator";
 export class ChipDto{
     @IsString()
     @IsNotEmpty()
-    ICCD: string;
+    iccd: string;
+
+
+static create (data: Partial<ChipDto>) {
+    return Object.assign(new ChipDto(), data);
+}
 }

@@ -8,5 +8,9 @@ export class LogisticaDto{
 
     @IsString()
     @IsNotEmpty()
-    chip
+    chip: string;
+
+static create (data: Partial<LogisticaDto>) {
+    return Object.assign(new LogisticaDto(), data);
+}
 }
