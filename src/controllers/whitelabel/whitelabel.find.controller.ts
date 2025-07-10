@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify"; 
 import { WhitelabelRepository } from "../../repository/whitelabel.repository";
-import { WhitelabelFindUsecase } from "../../usecase/whitelabel.find.usecase";
+import { WhitelabelFindUsecase } from "../../usecase/whitelabel/whitelabel.find.usecase";
  
 export async function whitelabelFindController(req: FastifyRequest, res: FastifyReply) { 
     

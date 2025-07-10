@@ -1,4 +1,4 @@
-import { WhitelabelRepository } from "../repository/whitelabel.repository";
+import { WhitelabelRepository } from "../../repository/whitelabel.repository";
 
 
 export class WhitelabelFindUsecase {

@@ -1,7 +1,7 @@
 import { FastifyRequest, FastifyReply } from "fastify"; 
-import { WhiteLabelDto } from "./dto/whitelabel.dto";
+import { WhiteLabelDto } from "../dto/whitelabel.dto";
 import { validateOrReject } from "class-validator";
-import { WhitelabelCreateUsecase } from "../../usecase/whitelabel.create.usecase";
+import { WhitelabelCreateUsecase } from "../../usecase/whitelabel/whitelabel.create.usecase";
 import { WhitelabelRepository } from "../../repository/whitelabel.repository";
  
 export async function whitelabelCreateController(req: FastifyRequest, res: FastifyReply) { 
@@ -10,7 +10,7 @@ export async function whitelabelCreateController(req: FastifyRequest, res: Fasti
     
     
     const whitelabelCreateUsecase = new WhitelabelCreateUsecase(new WhitelabelRepository());
-    await whitelabelCreateUsecase.execute(body);
-    res.status(201).send();
+    const result = await whitelabelCreateUsecase.execute(body);
+    res.status(201).send(result);
 }
 

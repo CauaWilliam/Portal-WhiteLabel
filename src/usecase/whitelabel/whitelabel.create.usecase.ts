@@ -1,7 +1,7 @@
-import { WhiteLabelDto } from "../controllers/whitelabel/dto/whitelabel.dto";
-import { WhitelabelEntity } from "../entity/witelabel.entity";
-import { WhitelabelRepository } from "../repository/whitelabel.repository";
-import { gerarHash } from "../script/hash_generator";
+import { WhiteLabelDto } from "../../controllers/dto/whitelabel.dto";
+import { WhitelabelEntity } from "../../entity/witelabel.entity";
+import { WhitelabelRepository } from "../../repository/whitelabel.repository";
+import { gerarHash } from "../../script/hash_generator";
 
 
 export class WhitelabelCreateUsecase {
@@ -15,7 +15,7 @@ export class WhitelabelCreateUsecase {
             senha: hash,            
             created_at: new Date(),
         });
-        console.log(payload);
-        await this.whitelabelRepository.save(payload);
+        const result = await this.whitelabelRepository.save(payload);
+        return result;
     }
 }

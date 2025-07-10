@@ -6,7 +6,8 @@ import { eq } from "drizzle-orm";
 
 export class WhitelabelRepository {
     async save(user: WhitelabelEntity) { 
-        await db.insert(whitelabel_schema).values(user as any);
+        const result = await db.insert(whitelabel_schema).values(user as any).returning();
+        return result[0];
     }
     async find() {
         return await db.select().from(whitelabel_schema);
