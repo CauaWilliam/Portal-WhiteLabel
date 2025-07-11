@@ -2,11 +2,13 @@ import fastify from "fastify";
 import fastifyCors from '@fastify/cors';
 import {  whitelabelRoutes } from "./routes/whitelabel.routes";
 import { chipRoutes } from "./routes/chip.routes";
+import { posRoutes } from "./routes/pos.routes";
   
 export const app = fastify({logger : true});
    
 app.register(whitelabelRoutes, {prefix: "/whitelabel"});
 app.register(chipRoutes, {prefix: "/chip"});
+app.register(posRoutes, {prefix: "/POS"});
 app.register(fastifyCors, {
   origin: 'http://localhost:5173/',
   credentials: true,

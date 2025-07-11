@@ -1,5 +1,5 @@
 {
-  "id": "0489807b-4fb6-4233-b5e9-6b7946acccef",
+  "id": "f563a4e1-7d86-479d-8d3b-c05edf1f1811",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -20,6 +20,18 @@
           "primaryKey": false,
           "notNull": false
         },
+        "whitelabel": {
+          "name": "whitelabel",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "whitelabel_id": {
+          "name": "whitelabel_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
         "updated_at": {
           "name": "updated_at",
           "type": "timestamp",
@@ -36,7 +48,21 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "chip_whitelabel_id_whitelabel_id_fk": {
+          "name": "chip_whitelabel_id_whitelabel_id_fk",
+          "tableFrom": "chip",
+          "tableTo": "whitelabel",
+          "columnsFrom": [
+            "whitelabel_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "policies": {},
@@ -61,12 +87,6 @@
         },
         "whitelabel_id": {
           "name": "whitelabel_id",
-          "type": "integer",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "chip_id": {
-          "name": "chip_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false
@@ -99,19 +119,6 @@
             "id"
           ],
           "onDelete": "cascade",
-          "onUpdate": "no action"
-        },
-        "POS_chip_id_chip_id_fk": {
-          "name": "POS_chip_id_chip_id_fk",
-          "tableFrom": "POS",
-          "tableTo": "chip",
-          "columnsFrom": [
-            "chip_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
-          "onDelete": "restrict",
           "onUpdate": "no action"
         }
       },

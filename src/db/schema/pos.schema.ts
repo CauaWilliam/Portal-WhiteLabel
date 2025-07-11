@@ -6,7 +6,6 @@ export const pos_schema = pgTable('POS', {
   id: serial('id').primaryKey(),
   numero_serie: varchar('numero_serie', { length: 100 }).notNull(),
   whitelabel_id: integer('whitelabel_id').references(() => whitelabel_schema.id, { onDelete: 'cascade' }),
-  chip_id: integer('chip_id').references(() => chip_schema.id, { onDelete: 'restrict' }),
   updated_at: timestamp('updated_at').notNull().defaultNow(),
   created_at: timestamp('created_at').notNull().defaultNow(),
 });

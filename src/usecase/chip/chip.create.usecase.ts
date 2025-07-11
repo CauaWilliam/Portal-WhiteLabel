@@ -10,15 +10,13 @@ export class ChipCreateUseCase {
     constructor(private readonly chipRepository: ChipRepository) {}
 
     async execute(data: ChipDto) {
-        try{
         const payload = ChipEntity.create({
-            ...data,                     
-            created_at: new Date(),
+           ...data,  
+           created_at: new Date(),
         });
+
         const result = await this.chipRepository.save(payload);
         return result;
-    }catch(err){
-        console.log(err)
-    }
+
     }
 }

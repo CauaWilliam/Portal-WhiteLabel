@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch ./src/server.ts",
-    "migrate": "npx drizzle-kit migrate"
+    "migrate": "npx drizzle-kit migrate",
+    "drizzle:generate": "drizzle-kit generate:pg",
+    "drizzle:push": "drizzle-kit push:pg"
   },
   "keywords": [],
   "author": "",
